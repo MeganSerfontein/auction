@@ -1,11 +1,12 @@
 import React from 'react';
+import './App.css';
+
+import AdminDash from './AdminDash'
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello</h1>
-      </div>
+      <AdminDash />
     )
   }
 }
