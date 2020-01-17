@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
 
+import PubNubTest from './PubNubTest'
+
 class DashCards extends Component {
     
   constructor(props) {
@@ -58,6 +60,13 @@ class DashCards extends Component {
                         <blockquote className="card-bodyquote">
                         <header>Users online</header>
                         <h1>{this.props.people}</h1>
+                        </blockquote>
+                    </Card>
+                </Grid>
+                <Grid item md={12} xs={12}>
+                    <Card>
+                        <blockquote className="card-bodyquote">
+                        <PubNubTest />
                         </blockquote>
                     </Card>
                 </Grid>
