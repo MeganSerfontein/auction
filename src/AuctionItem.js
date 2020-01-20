@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core';
+import { Typography, FilledInput } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -11,6 +11,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+
+import Image from './static/test.jpg'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,8 +22,9 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(3),
       width: theme.spacing(300),
       height: theme.spacing(30),
-      backgroundColor: '#ccc',
-      backgroundImage: '/static/test.jpg',
+      backgroundImage: `url(${Image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'bottom',
       
     },
   },
@@ -59,7 +62,7 @@ export default function AuctionItem() {
     
     <Container maxWidth="lg" className={classes.container}>
       <div className={classes.root}>
-          <Paper />
+          <Paper className={classes.gallery}/>
       </div>
       <Typography gutterBottom variant="h5" component="h2">
             3 Nights for 2 in Mauritius

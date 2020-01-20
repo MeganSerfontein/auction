@@ -82,11 +82,14 @@ export default class PubNubSubmit extends Component {
                                         startAdornment={<InputAdornment position="start">ZAR</InputAdornment>}
                                     />
                                 </FormControl>
+							<br />
+							<br />
 			        		<Button variant="contained" color="primary" type="submit" value="Submit">Place Bid</Button>
 			      	    </form>
 					</Grid>
                 </Grid>
                 </Typography>
+				<br />
 			</Container>
 	    );
 	}
