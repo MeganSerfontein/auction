@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-
 import Grid from '@material-ui/core/Grid';
+
 import { Container } from '@material-ui/core';
 
-import PubNubTest from './PubNubTest'
+import PubNubSubmit from './PubNubSubmit'
 
-class DashCards extends Component {
+class PubNubCards extends Component {
     
   constructor(props) {
     super(props);
@@ -37,9 +32,9 @@ class DashCards extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <Container>
+        <Container style={{marginTop: '2em'}}>
             <Grid container spacing={3}>
-                <Grid item md={4} xs={12}>
+                <Grid item md={6} xs={6}>
                     <Card>
                         <blockquote className="card-bodyquote">
                         <header>Number of Bids</header>
@@ -47,7 +42,7 @@ class DashCards extends Component {
                         </blockquote>
                     </Card>
                 </Grid>
-                <Grid item md={4} xs={12}>
+                <Grid item md={6} xs={6}>
                     <Card>
                         <blockquote className="card-bodyquote">
                         <header>Highest bid</header>
@@ -55,18 +50,10 @@ class DashCards extends Component {
                         </blockquote>
                     </Card>
                 </Grid>
-                <Grid item md={4} xs={12}>
-                    <Card>
-                        <blockquote className="card-bodyquote">
-                        <header>Users online</header>
-                        <h1>{this.props.people}</h1>
-                        </blockquote>
-                    </Card>
-                </Grid>
                 <Grid item md={12} xs={12}>
                     <Card>
                         <blockquote className="card-bodyquote">
-                        <PubNubTest />
+                        <PubNubSubmit />
                         </blockquote>
                     </Card>
                 </Grid>
@@ -77,10 +64,9 @@ class DashCards extends Component {
   }
 }
 
-DashCards.propTypes = {
+PubNubCards.propTypes = {
   data: PropTypes.string,
   highest: PropTypes.string,
-  people: PropTypes.string
 };
 
-export default DashCards;
+export default PubNubCards;

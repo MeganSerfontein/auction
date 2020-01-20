@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import testimage from './static/test.jpg';
 import PubNubReact from 'pubnub-react';
 
 import Button from '@material-ui/core/Button';
@@ -7,19 +6,13 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import FormControl from '@material-ui/core/FormControl';
-import Paper from '@material-ui/core/Paper';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-
-
-import Input from '@material-ui/core/Input';
 import FilledInput from '@material-ui/core/FilledInput';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import InputAdornment from '@material-ui/core/InputAdornment';
 
-export default class PubNubTest extends Component {
+export default class PubNubSubmit extends Component {
 
 	constructor(props) {
     	super(props);
@@ -45,8 +38,8 @@ export default class PubNubTest extends Component {
         // if (data != null) {
             if(this.state.value > startingBid && this.state.value < 1000000) {
                 this.pubnub.publish({
-                    message: message,
-                    channel: 'PubNubTest'
+					message: message,
+                    channel: 'PubNubSubmit'
                 });
 			} else {
 				alert("Enter value higher than the Starting Bid!");
@@ -59,10 +52,10 @@ export default class PubNubTest extends Component {
 
 		componentWillMount() {
          this.pubnub.subscribe({
-             channels: ['PubNubTest'],
-             withPresence: false
+             channels: ['PubNubSubmit'],
+             withPresence: false,
          });
-         this.pubnub.getMessage('PubNubTest', (msg) => {
+         this.pubnub.getMessage('PubNubSubmit', (msg) => {
          	// var data = localStorage.getItem('username');
              console.log(msg.message);
  						this.last_message = msg.message;
@@ -72,14 +65,12 @@ export default class PubNubTest extends Component {
      }
 
 	render() {   
-			const messages = this.pubnub.getMessage('PubNubTest');
+			const messages = this.pubnub.getMessage('PubNubSubmit');
 	    return (
 	    	<Container maxWidth="lg">
                 <Typography>
                 <Grid container>
                     <Grid item md={12}>
-				    	<br/>
-				    	<br/>
 				    	<form onSubmit={this.handleSubmit}>
 									<h2> Starting Bid is ZAR100 </h2>
                                 <FormControl fullWidth variant="filled">

@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
-import CurrentBid from './CurrentBid';
 import TextField from '@material-ui/core/TextField';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -19,8 +18,8 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     '& > *': {
       marginBottom: theme.spacing(3),
-      width: theme.spacing(500),
-      height: theme.spacing(40),
+      width: theme.spacing(300),
+      height: theme.spacing(30),
       backgroundColor: '#ccc',
       backgroundImage: '/static/test.jpg',
       
@@ -68,9 +67,9 @@ export default function AuctionItem() {
       <Typography variant="body2" color="textSecondary" component="p">
             Bid on 3 Nights for 2 at the Mariposa Hotel in Mauritius, transport and meals included!
       </Typography>
-      <Button variant="contained" color="primary" className={classes.Button} onClick={handleClickOpen}>
+      {/*<Button variant="contained" color="primary" className={classes.Button} onClick={handleClickOpen}>
             Bid Now
-      </Button>
+          </Button>*/}
       {/* MODAL START */}
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">BID</DialogTitle>
@@ -113,8 +112,6 @@ export default function AuctionItem() {
         </DialogActions>
       </Dialog>
       {/* MODAL END */}
-
-      <CurrentBid />
     </Container>
   );
 }

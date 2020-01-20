@@ -59,11 +59,7 @@ export default function ButtonAppBar() {
             <Typography variant="h6">
               <ul>
                   <Link to="/">
-                    <Button >Home</Button>
-                  </Link>
-
-                  <Link to="/Auctions"> 
-                    <Button >Auctions</Button>
+                    <Button >Auction</Button>
                   </Link>
                   
                   <Button variant="contained" color="primary" className={classes.Button} onClick={handleClickOpen}>

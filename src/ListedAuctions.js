@@ -1,9 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import CardTest from './CardTest'
+import AuctionListing from './AuctionListing'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,16 +27,16 @@ export default function Auctions() {
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={3}>
-            <CardTest className={classes.paper} />
+            <AuctionListing className={classes.paper} />
           </Grid>
           <Grid item xs={12} sm={3}>
-            <CardTest className={classes.paper} />
+            <AuctionListing className={classes.paper} />
           </Grid>
           <Grid item xs={12} sm={3}>
-           <CardTest className={classes.paper} />
+           <AuctionListing className={classes.paper} />
           </Grid>
           <Grid item xs={12} sm={3}>
-            <CardTest className={classes.paper} />
+            <AuctionListing className={classes.paper} />
           </Grid>
         </Grid>
       </Container>

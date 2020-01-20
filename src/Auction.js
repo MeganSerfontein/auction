@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import PubNubReact from 'pubnub-react';
 
-import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText';
 
 import { Container } from '@material-ui/core';
-import DashCards from './DashCards';
-  
 
-export default class AdminDash extends Component {
+import PubNubCards from './PubNubCards';
+import AuctionItem from './AuctionItem';  
+
+export default class Auction extends Component {
 
 		constructor(props) {
 			super(props);
@@ -29,10 +27,10 @@ export default class AdminDash extends Component {
 
 		componentWillMount() {
 			this.pubnub.subscribe({
-					channels: ['PubNubTest'],
+					channels: ['PubNubSubmit'],
 					withPresence: true
 			});
-			this.pubnub.getMessage('PubNubTest', (msg) => {
+			this.pubnub.getMessage('PubNubSubmit', (msg) => {
 					console.log('***'+msg.message);
 					//this.last_message = msg.message;
 					this.setState ({
@@ -40,7 +38,7 @@ export default class AdminDash extends Component {
 					});
 			});
 			this.pubnub.hereNow({
-				channels: ["PubNubTest"],
+				channels: ["PubNubSubmit"],
 				includeState: true
 			},(status,response)=> {
 				console.log(response.totalOccupancy);
@@ -52,18 +50,12 @@ export default class AdminDash extends Component {
 		}
 
 	render() {		
-		const messages = this.pubnub.getMessage('PubNubTest');
+		const messages = this.pubnub.getMessage('PubNubSubmit');
 
 	    return (
-	    		<Container>
-					<DashCards data={messages.length} highest={this.state.highest} people={this.state.people}/>
-						<br/>
-						<br/>
-                        <div>
-                            <List component="nav" aria-label="main mailbox folders" flush>
-                                {messages.map((m, index) =><ListItem><h1 key={'message' + index}>{m.message}</h1></ListItem>)}
-                            </List>
-                        </div>
+	    		<Container Container style={{marginBottom: '2em'}}>
+					<AuctionItem />
+					<PubNubCards data={messages.length} highest={this.state.highest} people={this.state.people}/>
 				</Container>
 				);
 	}

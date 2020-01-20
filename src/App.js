@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import AdminDash from './AdminDash'
+import Auction from './Auction'
 
 class App extends React.Component {
   render() {
     return (
-      <AdminDash />
+      <Auction />
     )
   }
 }
