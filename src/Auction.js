@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import PubNubReact from 'pubnub-react';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-
 import { Container } from '@material-ui/core';
 
 import PubNubCards from './PubNubCards';

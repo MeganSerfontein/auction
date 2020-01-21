@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import { Typography, FilledInput } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -45,7 +45,7 @@ export default function AuctionItem() {
 
   const classes = useStyles();
 
-   {/* MODAL CONTROL START */}
+   /* MODAL CONTROL START */
    const [open, setOpen] = React.useState(false);
 
    const handleClickOpen = () => {
@@ -55,7 +55,7 @@ export default function AuctionItem() {
    const handleClose = () => {
      setOpen(false);
    };
-   {/* MODAL CONTROL END */}
+   /* MODAL CONTROL END */
 
 
   return (
@@ -74,7 +74,7 @@ export default function AuctionItem() {
             Bid Now
           </Button>*/}
       {/* MODAL START */}
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      {/* <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">BID</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -114,7 +114,7 @@ export default function AuctionItem() {
           </Button>
         </DialogActions>
       </Dialog>
-      {/* MODAL END */}
+      MODAL END */}
     </Container>
   );
 }

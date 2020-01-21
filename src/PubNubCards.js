@@ -7,31 +7,12 @@ import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
 
 import PubNubSubmit from './PubNubSubmit'
+import PubNubReact from 'pubnub-react';
 
 class PubNubCards extends Component {
-    
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.toggleFade = this.toggleFade.bind(this);
-    this.state = {
-      collapse: true,
-      fadeIn: true,
-      timeout: 300
-    };
-  }
-
-  toggle() {
-    this.setState({ collapse: !this.state.collapse });
-  }
-
-  toggleFade() {
-    this.setState((prevState) => { return { fadeIn: !prevState }});
-  }
 
   render() {
     return (
-      <div className="animated fadeIn">
         <Container style={{marginTop: '2em'}}>
             <Grid container spacing={3}>
                 <Grid item md={6} xs={6}>
@@ -59,7 +40,6 @@ class PubNubCards extends Component {
                 </Grid>
             </Grid>
         </Container>
-      </div>
     );
   }
 }
